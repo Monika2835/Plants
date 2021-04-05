@@ -18,7 +18,9 @@ function App() {
 
       <h1 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New', fontWeight: 'bold' }}>
         Plants World 
+        <a href="http://localhost:3000/login" class="btn btn-outline-light" role="button"><img src={require('./components/images/user.png').default} height={ 30} width={ 30}/></a>
       </h1>
+      
       
 
       <Navigation/>

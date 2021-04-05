@@ -42,7 +42,7 @@ export default class Login extends Component{
                     <input type="password" className="form-control" placeholder="Repeat Password" />
                 </div>
 
-                <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block">Register</button>
+                <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block">Sign Up</button>
 
             </form>
         );

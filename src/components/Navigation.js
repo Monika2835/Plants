@@ -27,9 +27,6 @@ export class Navigation extends Component{
                         <li class="nav-item">
                             <a class="nav-link active" href="/about">ABOUT</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/login">LOGIN</a>
-                        </li>
                     </ul>
                 </div>
             </div>

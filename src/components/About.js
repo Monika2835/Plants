@@ -14,7 +14,7 @@ class About extends Component {
             }
         >
         <div class="media">
-            <img style={{marginTop: '20px'}} class="mr-3"src={require('./images/flowers.jfif').default} height={ 250} width={ 200} alt="Generic placeholder image"/>
+            <img style={{marginTop: '20px'}} class="mr-3"src={require('./images/plant3.jpg').default} height={ 250} width={ 200} alt="Generic placeholder image"/>
             <div class="media-body">
                 <h3 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New', fontWeight: 'bold' }}>Let's meet each other!</h3>
                 <h5 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New'}}>I am a full of energy, young woman, who loves to take care of every kind of plants!</h5>
