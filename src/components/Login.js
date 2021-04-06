@@ -19,7 +19,7 @@ export default class Login extends Component{
 
                 <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block">Sign in</button>
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <a href="http://localhost:3000/account">password?</a>
                 </p>
 
                 <div className="form-group">

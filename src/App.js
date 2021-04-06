@@ -10,6 +10,8 @@ import About from './components/About'
 import Navigation from './components/Navigation'
 import React from 'react'
 import Login from './components/Login';
+import Account from './components/Account';
+import Password from './components/Password';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path = '/forum' component = {Forum} exact/>
         <Route path = '/about' component = {About} exact/>
         <Route path = '/login' component = {Login} exact/>
+        <Route path = '/account' component = {Account} exact/>
+        <Route path = '/password' component = {Password} exact/>
       </Switch>
       
     </div>

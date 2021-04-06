@@ -12,7 +12,7 @@ class Forum extends Component {
 
             }
         >
-            <h3 style={{ fontFamily: 'Courier New' }}>Forum</h3>
+            <h3 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New'}}>Forum</h3>
         </div>
         );
     }
