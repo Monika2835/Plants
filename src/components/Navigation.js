@@ -5,12 +5,11 @@ import {Navbar, Nav} from 'react-bootstrap'
 const styles = {
     paddingRight: "30px",
     paddingLeft: "30px",
-    fontSize: "20px"
+    fontSize: "20px",
+    letterSpacing: "4px"
 };
 
 export class Navigation extends Component{
-    
-
     render(){
         return(
             <nav class="navbar navbar-expand-sm navbar-light bg-light" data-toggle="affix">
