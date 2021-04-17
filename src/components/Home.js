@@ -14,7 +14,7 @@ class Home extends Component {
             }
         >
         </div>
-        <img src={require('./images/flowers.jfif').default} height={ 400} width={ 1110}/>
+        <img src={require('./images/background.jpg').default} height={ 400} width={ 1110}/>
         <h3 style={{ fontFamily: 'Courier New', marginTop: '30px', fontWeight: 'bold' }}>The latest posts</h3>
         </div>
         );
