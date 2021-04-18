@@ -1,50 +1,70 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect} from "react";
+import './Login.css';
+import Axios from "axios"
 
-export default class Login extends Component{
-    render(){
-        return (
-            <form style={{ fontFamily: 'Courier New'}}>
-                <h3 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New', fontWeight: 'bold'}}>
-                    Join to our Plant-Lowers community!
-                </h3>
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email"/>
-                </div>
 
-                <div className="form group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password"/>
-                </div>
 
-                <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block">Sign in</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="http://localhost:3000/account">password?</a>
-                </p>
 
-                <div className="form-group">
-                    <label>Nickname</label>
-                    <input type="text" className="form-control" placeholder="Nickname" />
-                </div>
+function Login (){
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Email" />
-                </div>
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Password" />
-                </div>
-
-                <div className="form-group">
-                    <label>Repeat Password</label>
-                    <input type="password" className="form-control" placeholder="Repeat Password" />
-                </div>
-
-                <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block">Sign Up</button>
-
-            </form>
-        );
+    const submitData = () => {
+        Axios.post('http://localhost:3000/account', {
+            email: email,
+            password: password,
+        }).then(()=>{
+            alert("successful insert")
+        })
     }
+    return (
+        
+
+        <form style={{ fontFamily: 'Courier New'}}>
+            <h3 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New', fontWeight: 'bold'}}>
+                Join to our Plant-Lowers community!
+            </h3>
+            <div id="container">
+                <div className="column">
+                    <div className="box">
+                        Email
+                        <input type="Email" className="form-control" placeholder="Email" name="email" onChange={(e)=>{ setEmail(e.target.value)}}/>   
+                    </div>
+                    <div className="box">
+                        Password
+                        <input type="password" className="form-control" placeholder="Password" name="password" onChange={(e)=>{ setPassword(e.target.value)}}/>
+                    </div>
+                    <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" onClick={submitData}>Sign in</button>
+                    <p className="forgot-password text-right">
+                        Forgot <a href="http://localhost:3000/account">password?</a>
+                    </p>
+                </div>
+                <div className="column">
+                    <div className="box">
+                        Email
+                        <input type="Email" className="form-control" placeholder="Email" />
+                    </div>
+                    <div className="box">
+                        Nickname
+                        <input type="Nickname" className="form-control" placeholder="Nickname" />
+                    </div>
+                    <div className="box">
+                        Password
+                        <input type="password" className="form-control" placeholder="Password" />
+                    </div>
+                    <div className="box">
+                        Reapat Password
+                        <input type="password" className="form-control" placeholder="Password" />
+                    </div>
+                    <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block">Sign Up</button>
+                </div>
+                <div class="empty"></div>
+            </div>
+            
+
+        </form>
+    );
 }
+
+export default Login;

@@ -1,0 +1,29 @@
+#container
+{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.column
+{
+    padding: 20px;
+    width: 460px;
+    float: left;
+}
+
+.empty
+{
+    clear: both;
+}
+
+.box
+{
+    padding-bottom: 15px;
+}
+
+/* .submit
+{
+    color: aquamarine;
+    margin-top: 30px;
+} */

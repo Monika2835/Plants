@@ -1,0 +1,29 @@
+.recent-posts
+{
+    float: left;
+    padding: 10px;
+    min-height: 500px;
+}
+
+.empty
+{
+    clear: both;
+}
+
+#picture
+{
+    float: left;
+}
+
+#description
+{
+    float: left;
+    width: 700px;
+    padding-left: 50px;
+}
+
+.recent-image
+{
+    height: 200;
+    width: 263;
+}
