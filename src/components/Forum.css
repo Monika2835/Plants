@@ -1,0 +1,40 @@
+.question
+{
+    width: 900px;
+    min-height: 200px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: #77BFA3 solid 2px;
+    color: black;
+    clear: both;
+}
+
+.question:hover
+{
+    background-color: #e6e6e6;
+    color: black;
+}
+
+.title
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+.discription
+{
+    float: left;
+    width: 660px;
+}
+.counter
+{
+    float: left;
+    width: 140px;
+    font-size: 48px;
+    text-align: right;
+    color: #98C9A3;
+}
+.empty
+{
+    clear: both;
+}
