@@ -3,37 +3,37 @@ import React, { Component } from 'react';
 class Account extends Component {
     render() {
         return (
-            <div class="container light-style flex-grow-1 container-p-y">
+            <div className="container light-style flex-grow-1 container-p-y">
 
     <h3 style={{ fontFamily: 'Courier New', fontWeight: 'bold', marginTop: '20px' }}>
       Account settings
     </h3>
-        <div class="col-md-9" style={{ fontFamily: 'Courier New'}}>
-          <div class="tab-content">
-            <div class="tab-pane fade active show" id="account-general">
+        <div className="col-md-9" style={{ fontFamily: 'Courier New'}}>
+          <div className="tab-content">
+            <div className="tab-pane fade active show" id="account-general">
 
-              <div class="card-body media align-items-center">
+              <div className="card-body media align-items-center">
                 <img src={require('./images/user.png').default} height={ 210} width={ 210} alt="" class="d-block ui-w-80"/>
-                <div class="media-body ml-4">
-                  <label class="btn btn-outline-primary">
+                <div className="media-body ml-4">
+                  <label className="btn btn-outline-primary">
                     Upload new photo
-                    <input type="file" class="account-settings-fileinput"/>
+                    <input type="file" className="account-settings-fileinput"/>
                   </label> &nbsp;
-                  <a href="http://localhost:3000/password" class="btn btn btn-success" role="button">Reset</a>
+                  <a href="http://localhost:3000/password" className="btn btn btn-success" role="button">Reset</a>
 
-                  <div style={{ fontFamily: 'Courier New'}} class="text-dark small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                  <div style={{ fontFamily: 'Courier New'}} className="text-dark small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                 </div>
               </div>
-              <hr class="border-light m-0"/>
+              <hr className="border-light m-0"/>
 
-              <div class="card-body" style={{ fontFamily: 'Courier New'}}>
-                <div class="form-group">
-                  <label class="form-label">Nickname</label>
-                  <input type="text" class="form-control mb-1" value="user"/>
+              <div className="card-body" style={{ fontFamily: 'Courier New'}}>
+                <div className="form-group">
+                  <label className="form-label">Nickname</label>
+                  <input type="text" className="form-control mb-1" value="user"/>
                 </div>
-                <div class="form-group">
-                  <label class="form-label">E-mail</label>
-                  <input type="text" class="form-control mb-1" value="user@gmail.com"/>
+                <div className="form-group">
+                  <label className="form-label">E-mail</label>
+                  <input type="text" className="form-control mb-1" value="user@gmail.com"/>
                 </div>
               </div>
 

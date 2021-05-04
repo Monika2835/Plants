@@ -12,27 +12,27 @@ const styles = {
 export class Navigation extends Component{
     render(){
         return(
-            <nav class="navbar navbar-expand-sm navbar-light bg-light" data-toggle="affix">
-            <div class="mx-auto d-sm-flex d-block flex-sm-nowrap" style={{ fontFamily: 'Courier New' }}>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-sm navbar-light bg-light" data-toggle="affix">
+            <div className="mx-auto d-sm-flex d-block flex-sm-nowrap" style={{ fontFamily: 'Courier New' }}>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse text-center" id="navbarsExample11">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a  class="nav-link active" href="/" style={styles} >HOME</a>
+                <div className="collapse navbar-collapse text-center" id="navbarsExample11">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <a  className="nav-link active" href="/" style={styles} >HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/blog" style={styles}>BLOG</a>
+                        <li className="nav-item">
+                            <a className="nav-link active" href="/blog" style={styles}>BLOG</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/inspirations" style={styles}>INSPIRATIONS</a>
+                        <li className="nav-item">
+                            <a className="nav-link active" href="/inspirations" style={styles}>INSPIRATIONS</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/forum" style={styles}>FORUM</a>
+                        <li className="nav-item">
+                            <a className="nav-link active" href="/forum" style={styles}>FORUM</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/about" style={styles}>ABOUT</a>
+                        <li className="nav-item">
+                            <a className="nav-link active" href="/about" style={styles}>ABOUT</a>
                         </li>
                     </ul>
                 </div>

@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 class Password extends Component {
     render() {
         return (
-            <div class="container light-style flex-grow-1 container-p-y">
+            <div className="container light-style flex-grow-1 container-p-y">
 
-    <h4 class="py-3 mb-4" style={{ fontFamily: 'Courier New', fontWeight: 'bold'}}>
+    <h4 className="py-3 mb-4" style={{ fontFamily: 'Courier New', fontWeight: 'bold'}}>
       Change Password
     </h4>
-        <div class="col-md-9" style={{ fontFamily: 'Courier New'}}>
-          <div class="tab-content">
-            <div class="tab-pane fade active show" id="password">
+        <div className="col-md-9" style={{ fontFamily: 'Courier New'}}>
+          <div className="tab-content">
+            <div className="tab-pane fade active show" id="password">
 
-              <hr class="border-light m-0"/>
+              <hr className="border-light m-0"/>
 
-              <div class="card-body">
+              <div className="card-body">
               <div className="form-group">
                     <label>Current password</label>
                     <input type="email" className="form-control" placeholder="Enter password"/>
