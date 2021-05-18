@@ -1,28 +1,85 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import "./Forum.css"
+import Axios from "axios"
+import Post from './Post';
 
-class Forum extends Component {
-    render() {
+
+function Forum (){
+
+    const [titleInput, setTitle] = useState("");
+    const [descriptionInput, setDescription] = useState("");
+
+    const submitData = (e) => {
+        e.preventDefault()
+        console.log("im here")
+        console.log(titleInput)
+        console.log(descriptionInput)
+        Axios.post('http://localhost:8080/plants/create/posts', {
+            "idUser": "1",
+            "title": titleInput,
+            "description": descriptionInput,
+        })
+        .then((response) => {
+            console.log("good");
+            window.location.reload(false);
+          })
+        .catch((error) => {
+            console.log("wrong data")
+          })
+        
+    }
+    
+    const [posts, getPosts] = useState('');
+
+    const getAllPosts = () => {
+        Axios.get('http://localhost:8080/plants/get/posts')
+            .then(response => {
+                const allPost = response.data
+                getPosts(allPost);
+            })
+            .catch(error => console.error(`Error:  ${error}`));
+        console.log(posts);
+    }
+
+    useEffect(() => {
+        getAllPosts();
+    }, []);
+
+   
+    if (posts.length > 0){
         return (
-            <div style={{display:"flex", justifyContent: "center", alignItems: "center"}}>
-                <div href="./home" className="question">
-                    <h3 className = "title">How to take care of Pachira?</h3>
-                    <div className="discription">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-                    <div className="counter">
-                        10
-                    </div>
-                    <div className="empty"></div>
+            <div>
+                <div style={{dispay: "block", justifyContent: "center", alignItems: "center"}}>
+                    Title
+                    <input type="titleInput" className="form-control" placeholder="Title" name="title" 
+                            onChange={(e)=>{ setTitle(e.target.value)}}/>   
+                    Description
+                    <input type="descriptionInput" className="form-control" placeholder="Descrition" name="Description" 
+                            onChange={(e)=>{ setDescription(e.target.value)}}/>
+                    <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" 
+                            onClick={(e) => submitData(e)}>Add new question</button>
+                    <div className="break"></div>
                 </div>
-                
+                <div style={{dispay: "block", justifyContent: "center", alignItems: "center"}}>
+                    {posts.map((post) => <Post title={post.title} description={post.description} messageId={post.idMessage}/>)}
+                </div>
             </div>
         );
     }
+    else {
+        return (
+        <div>
+            Title
+            <input type="titleInput" className="form-control" placeholder="Title" name="title" onChange={(e)=>{ setTitle(e.target.value)}}/>   
+            Description
+            <input type="descriptionInput" className="form-control" placeholder="Descrition" name="Description" onChange={(e)=>{ setDescription(e.target.value)}}/>
+            <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" 
+                    onClick={(e) => submitData(e)}>Add new question</button>
+            <div className="break"></div>
+        </div>
+        )
+    }
+    
 }
 
 export default Forum;
