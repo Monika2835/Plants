@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
-import "./Forum.css"
-import Axios from "axios"
+import "./Forum.css";
+import Axios from "axios";
 import Post from './Post';
 
 
@@ -34,11 +34,10 @@ function Forum (){
     const getAllPosts = () => {
         Axios.get('http://localhost:8080/plants/get/posts')
             .then(response => {
-                const allPost = response.data
-                getPosts(allPost);
+                const allPosts = response.data
+                getPosts(allPosts);
             })
             .catch(error => console.error(`Error:  ${error}`));
-        console.log(posts);
     }
 
     useEffect(() => {
@@ -61,7 +60,7 @@ function Forum (){
                     <div className="break"></div>
                 </div>
                 <div style={{dispay: "block", justifyContent: "center", alignItems: "center"}}>
-                    {posts.map((post) => <Post title={post.title} description={post.description} messageId={post.idMessage}/>)}
+                    {posts.map((post) => <Post title={post.title} description={post.description} postId={post.idPost}/>)}
                 </div>
             </div>
         );

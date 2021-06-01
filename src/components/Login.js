@@ -14,7 +14,8 @@ function Login (){
     const [password2Register, setPassword2R] = useState("");
     const [nickname, setNickname] = useState("");
 
-    const submitData = () => {
+    const submitData = (e) => {
+        e.preventDefault()
         console.log("im here")
         console.log(email)
         console.log(password)
@@ -33,30 +34,7 @@ function Login (){
         
     }
 
-    const register = () => {
-        console.log("im here")
-        console.log(emailRegister)
-        console.log(passwordRegister)
-        console.log(nickname)
-
-        if(passwordRegister == password2Register){
-            Axios.post('http://localhost:8080/plants/register', {
-            "nickname": nickname,
-            "email": emailRegister,
-            "password": passwordRegister,
-        })
-        .then((response) => {
-            window.emailGlobal = "email";
-            console.log("good");
-            window.location.href = "http://localhost:3000/account";
-          })
-        .catch((error) => {
-            console.log("wrong data")
-          })
-        }
-        
-        
-    }
+//context
 
     return (
         <form style={{ fontFamily: 'Courier New'}}>
@@ -76,33 +54,14 @@ function Login (){
                             onChange={(e)=>{ setPassword(e.target.value)}}/>
                     </div>
                     <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" 
-                        onClick={submitData()}>Sign in</button>
+                        onClick={(e) => submitData(e)}>Sign in</button>
                     <p className="forgot-password text-right">
                         Forgot <a href="http://localhost:3000/account">password?</a>
                     </p>
                 </div>
-                <div className="column">
-                    <div className="box">
-                        Email
-                        <input type="Email" className="form-control" placeholder="Email" onChange={(e)=>{ setEmailR(e.target.value)}}/>
-                    </div>
-                    <div className="box">
-                        Nickname
-                            <input type="Nickname" className="form-control" placeholder="Nickname" onChange={(e)=>{ setNickname(e.target.value)}}/>
-                    </div>
-                    <div className="box">
-                        Password
-                        <input type="password" className="form-control" placeholder="Password" onChange={(e)=>{ setPasswordR(e.target.value)}}/>
-                    </div>
-                    <div className="box">
-                        Reapat Password
-                        <input type="password" className="form-control" placeholder="Password" onChange={(e)=>{ setPassword2R(e.target.value)}}/>
-                    </div>
-                    <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" onClick={register()}>Sign Up</button>
-                </div>
-                <div class="empty"></div>
+  
             </div>
-            
+            <p className="register"><a href="http://localhost:3000/register">register</a></p>
 
         </form>
     );

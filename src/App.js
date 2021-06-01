@@ -12,6 +12,8 @@ import React from 'react'
 import Login from './components/Login';
 import Account from './components/Account';
 import Password from './components/Password';
+import Register from './components/Register';
+import Question from './components/Question';
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
 
       <h1 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New', fontWeight: 'bold' }}>
         Plants World 
-        <a href="http://localhost:3000/login" class="btn btn-outline-light" role="button"><img src={require('./components/images/user.png').default} height={ 30} width={ 30} /></a>
+        <a href="http://localhost:3000/login" className="btn btn-outline-light" role="button"><img src={require('./components/images/user.png').default} height={ 30} width={ 30} /></a>
       </h1>
       
       
@@ -36,6 +38,8 @@ function App() {
         <Route path = '/login' component = {Login} exact/>
         <Route path = '/account' component = {Account} exact/>
         <Route path = '/password' component = {Password} exact/>
+        <Route path = '/register' component = {Register} exact/>
+        <Route path = '/question' component = {Question} exact/>
       </Switch>
       
     </div>

@@ -2,7 +2,14 @@
 {
     float: left;
     padding: 10px;
-    min-height: 500px;
+    min-height: 400px;
+    width: 260px;
+}
+
+.recent-posts:hover
+{
+    background-color: #e6e6e6;
+    color: black;
 }
 
 .empty

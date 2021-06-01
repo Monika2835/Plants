@@ -1,7 +1,7 @@
 .question
 {
     width: 900px;
-    min-height: 200px;
+    min-height: 300px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 50px;
@@ -24,7 +24,18 @@
 .discription
 {
     float: left;
-    width: 660px;
+    text-align: left;
+    width: 600px;
+}
+.titleInput
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+.discriptionInput
+{
+    float: left;
+    text-align: left;
+    min-width: 500px;
 }
 .counter
 {
@@ -33,6 +44,10 @@
     font-size: 48px;
     text-align: right;
     color: #98C9A3;
+}
+.break
+{
+    min-width: 100px;
 }
 .empty
 {

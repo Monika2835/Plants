@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import Counter from './components/counter';
 
+window.emailGlobal = "kate.smith@gmail.com";
+
 ReactDOM.render(
   <App/>, document.getElementById('root')
 );

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import emailGlobal from "./Login";
 
-class Account extends Component {
-    render() {
+function Account (){
+
+
         return (
             <div className="container light-style flex-grow-1 container-p-y">
 
@@ -33,7 +35,8 @@ class Account extends Component {
                 </div>
                 <div className="form-group">
                   <label className="form-label">E-mail</label>
-                  <input type="text" className="form-control mb-1" value="user@gmail.com"/>
+                  <label className="form-label">{window.emailGlobal}</label>
+                  <input type="text" className="form-control mb-1" value={window.emailGlobal}/>
                 </div>
               </div>
 
@@ -45,10 +48,10 @@ class Account extends Component {
       <button type="button" class="btn btn-success">Save changes</button>&nbsp;
       <button type="button" class="btn btn-default">Cancel</button>
     </div>
-
+            
   </div>
         );
-    }
+    
 }
 
 export default Account;
