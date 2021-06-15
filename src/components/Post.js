@@ -21,7 +21,7 @@ export default class Post extends React.Component {
                     window.location.href = `http://localhost:3000/question`;
                 }}>
                 {console.log(this.state.postId)}
-                <h3 className = "title">{this.state.title}</h3>
+                <h3 className = "title" style = {{width: 1100}}>{this.state.title}</h3>
                 <div className="description">{this.state.shortDescription}</div>
             </div>
         );

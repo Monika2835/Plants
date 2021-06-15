@@ -34,19 +34,27 @@ function Home() {
             <h3 style={{ fontFamily: 'Courier New', marginTop: '30px', fontWeight: 'bold' }}>The latest posts</h3>
             {console.log(blog1.blob)}
             <div> 
-                <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
+                <div className="recent-posts" onClick={(e)=>{ 
+                        localStorage.setItem('blogId', blog1.idBlog);
+                        window.location.href = `http://localhost:3000/article`;}}>
                     <img src={require('./images/dog.jpg').default} height={ 260} width={ 260} className='recent-image'/>
                     <h4>{blog1.title}</h4>
                 </div>
-                <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
+                <div className="recent-posts" onClick={(e)=>{ 
+                        localStorage.setItem('blogId', blog2.idBlog);
+                        window.location.href = `http://localhost:3000/article`;}}>
                     <img src={require('./images/dog.jpg').default} height={ 260} width={ 260}/>
                     <h4>{blog2.title}</h4>
                 </div>
-                <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
+                <div className="recent-posts" onClick={(e)=>{ 
+                        localStorage.setItem('blogId', blog3.idBlog);
+                        window.location.href = `http://localhost:3000/article`;}}>
                     <img src={require('./images/dog.jpg').default} height={ 260} width={ 260}/>
                     <h4>{blog3.title}</h4>
                 </div>
-                <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
+                <div className="recent-posts" onClick={(e)=>{ 
+                        localStorage.setItem('blogId', blog4.idBlog);
+                        window.location.href = `http://localhost:3000/article`;}}>
                     <img src={require('./images/dog.jpg').default} height={ 260} width={ 260}/>
                     <h4>{blog4.title}</h4>
                 </div>

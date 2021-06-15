@@ -3,6 +3,7 @@ import { TextInput } from 'react-native';
 import Axios from 'axios';
 import {Button} from 'react-bootstrap';
 
+
 export default function EditBlog () {
 
     const [titleInput, setTitle] = useState("");
@@ -10,12 +11,14 @@ export default function EditBlog () {
     const [titleChanged, setTitleChanged] = useState("");
     const [descriptionChanged, setDescriptionChanged] = useState("");
 
+    useEffect(() => {
+        getBlog();
+    }, []);
 
     const getBlog = () => {
-        localStorage.setItem('userId', localStorage.getItem('userId'));
         const blogId = localStorage.getItem('blogId');
         console.log(blogId);
-        Axios.get(`https://localhost:8080/plants/get/blog/${blogId}`)
+        Axios.get(`http://localhost:8080/plants/get/blog/${blogId}`)
             .then(response => {
                 const blog = response.data[0];
                 setDescription(blog.description);
@@ -52,10 +55,6 @@ export default function EditBlog () {
                 console.log({error})
             })    
     }
-
-    useEffect(() => {
-        getBlog();
-    }, []);
 
     return (
         <div>

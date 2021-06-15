@@ -26,7 +26,7 @@ export default class ArticleShort extends React.Component {
                             <h3 style={{fontWeight: "bold"}} className = "m-3 d-flex justify-content-center">{this.state.title}</h3>
                         </div>
                         <div className = "picture" onClick = {(e) => {
-                            localStorage.setItem('userId', -1);
+                            localStorage.setItem('blogId', this.state.blogId);
                             window.location.href = `http://localhost:3000/editblog`;
                         }}>
                             <img style={{marginTop: '25px'}} className="mr-3" src={require('./images/edit.png').default} height={ 50} width={ 50} alt="Generic placeholder image"/>
@@ -40,9 +40,9 @@ export default class ArticleShort extends React.Component {
                     </div>
                     <p className="forgot-password text-right">
                         <a className="text-success" href="#" onClick={(e)=>{ 
-                localStorage.setItem('blogId', this.state.blogId);
-                window.location.href = `http://localhost:3000/article`;
-            }}>read more...</a>
+                            localStorage.setItem('blogId', this.state.blogId);
+                            window.location.href = `http://localhost:3000/article`;
+                        }}>read more...</a>
                     </p>
                 </div>
                 </li>
