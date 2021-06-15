@@ -1,6 +1,6 @@
 #container
 {
-    width: 1000px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
     
@@ -8,7 +8,7 @@
 .column
 {
     padding: 20px;
-    width: 960px;
+    width: 460px;
 }
 
 .empty

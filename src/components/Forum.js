@@ -1,21 +1,22 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useState, useEffect, useContext } from 'react';
 import "./Forum.css";
 import Axios from "axios";
 import Post from './Post';
-
+import { UserContext } from "./UserContext";
 
 function Forum (){
+    const user = localStorage.getItem('userId');
 
     const [titleInput, setTitle] = useState("");
     const [descriptionInput, setDescription] = useState("");
 
     const submitData = (e) => {
         e.preventDefault()
-        console.log("im here")
-        console.log(titleInput)
-        console.log(descriptionInput)
+        // console.log("im here")
+        // console.log(titleInput)
+        // console.log(descriptionInput)
         Axios.post('http://localhost:8080/plants/create/posts', {
-            "idUser": "1",
+            "idUser": 1,
             "title": titleInput,
             "description": descriptionInput,
         })
@@ -24,7 +25,7 @@ function Forum (){
             window.location.reload(false);
           })
         .catch((error) => {
-            console.log("wrong data")
+            console.log({error})
           })
         
     }
@@ -53,9 +54,9 @@ function Forum (){
                     <input type="titleInput" className="form-control" placeholder="Title" name="title" 
                             onChange={(e)=>{ setTitle(e.target.value)}}/>   
                     Description
-                    <input type="descriptionInput" className="form-control" placeholder="Descrition" name="Description" 
+                    <input type="descriptionInput" className="form-control" placeholder="Descrition" name="Description"
                             onChange={(e)=>{ setDescription(e.target.value)}}/>
-                    <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" 
+                    <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block"
                             onClick={(e) => submitData(e)}>Add new question</button>
                     <div className="break"></div>
                 </div>
@@ -67,18 +68,17 @@ function Forum (){
     }
     else {
         return (
-        <div>
-            Title
-            <input type="titleInput" className="form-control" placeholder="Title" name="title" onChange={(e)=>{ setTitle(e.target.value)}}/>   
-            Description
-            <input type="descriptionInput" className="form-control" placeholder="Descrition" name="Description" onChange={(e)=>{ setDescription(e.target.value)}}/>
-            <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" 
-                    onClick={(e) => submitData(e)}>Add new question</button>
-            <div className="break"></div>
-        </div>
+            <div>
+                Title
+                <input type="titleInput" className="form-control" placeholder="Title" name="title" onChange={(e)=>{ setTitle(e.target.value)}}/>   
+                Description
+                <input type="descriptionInput" className="form-control" placeholder="Descrition" name="Description" onChange={(e)=>{ setDescription(e.target.value)}}/>
+                <button style={{marginTop: '30px'}} type="submit" className="btn btn-success btn-lg btn-block" 
+                        onClick={(e) => submitData(e)}>Add new question</button>
+                <div className="break"></div>
+            </div>
         )
     }
-    
 }
 
 export default Forum;

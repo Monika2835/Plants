@@ -8,25 +8,22 @@ import Inspirations from './components/Inspirations'
 import Forum from './components/Forum'
 import About from './components/About'
 import Navigation from './components/Navigation'
-import React from 'react'
+import React, { useState } from 'react'
 import Login from './components/Login';
 import Account from './components/Account';
 import Password from './components/Password';
 import Register from './components/Register';
 import Question from './components/Question';
+import Article from './components/Article';
+import { UserProvider } from './components/UserContext';
+import EditBlog from './components/EditBlog';
 
 function App() {
+  const [user, setUser] = useState({login: false, userId: 2})
   return (
+    <UserProvider>
     <BrowserRouter>
     <div className="container">
-
-      <h1 className = "m-3 d-flex justify-content-center" style={{ fontFamily: 'Courier New', fontWeight: 'bold' }}>
-        Plants World 
-        <a href="http://localhost:3000/login" className="btn btn-outline-light" role="button"><img src={require('./components/images/user.png').default} height={ 30} width={ 30} /></a>
-      </h1>
-      
-      
-
       <Navigation/>
 
       <Switch>
@@ -40,10 +37,13 @@ function App() {
         <Route path = '/password' component = {Password} exact/>
         <Route path = '/register' component = {Register} exact/>
         <Route path = '/question' component = {Question} exact/>
+        <Route path = '/article' component = {Article} exact/>
+        <Route path = '/editblog' component = {EditBlog} exact/>
       </Switch>
       
     </div>
     </BrowserRouter>
+    </UserProvider>
   );
 }
 

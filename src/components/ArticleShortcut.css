@@ -1,0 +1,14 @@
+.title {
+    width: 850px;
+    float: left;
+}
+
+.picture {
+
+    float: left;
+}
+
+.empty
+{
+    clear: both;
+}

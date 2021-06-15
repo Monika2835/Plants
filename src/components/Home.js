@@ -32,22 +32,22 @@ function Home() {
             <div style={{display:"flex", justifyContent: "center", alignItems: "center"}}></div>
             <img src={require('./images/background.jpg').default} height={400} width={1110}/>
             <h3 style={{ fontFamily: 'Courier New', marginTop: '30px', fontWeight: 'bold' }}>The latest posts</h3>
-            {console.log(blog1.title)}
+            {console.log(blog1.blob)}
             <div> 
                 <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
-                    <img src={require('./images/dog.jpg').default} height={ 250} width={ 250} className='recent-image'/>
+                    <img src={require('./images/dog.jpg').default} height={ 260} width={ 260} className='recent-image'/>
                     <h4>{blog1.title}</h4>
                 </div>
                 <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
-                    <img src={require('./images/dog.jpg').default} height={ 250} width={ 250}/>
+                    <img src={require('./images/dog.jpg').default} height={ 260} width={ 260}/>
                     <h4>{blog2.title}</h4>
                 </div>
                 <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
-                    <img src={require('./images/dog.jpg').default} height={ 250} width={ 250}/>
+                    <img src={require('./images/dog.jpg').default} height={ 260} width={ 260}/>
                     <h4>{blog3.title}</h4>
                 </div>
                 <div className="recent-posts" onClick={(e)=>{ window.location.href = `http://localhost:3000/blog`;}}>
-                    <img src={require('./images/dog.jpg').default} height={ 250} width={ 250}/>
+                    <img src={require('./images/dog.jpg').default} height={ 260} width={ 260}/>
                     <h4>{blog4.title}</h4>
                 </div>
                 <div className="empty"></div>
@@ -55,10 +55,13 @@ function Home() {
             <div>
                 <h3 style={{ fontFamily: 'Courier New', marginTop: '30px', fontWeight: 'bold' }}>About me</h3>
                 <div id="picture">
-                    <img src={require('./images/plant11.jpg').default} height={ 400} width={ 300}/>
+                    <img src={require('./images/about.jpeg').default} height={ 400} width={ 600}/>
                 </div>
                 <div id="description">
-                    <h3>I am a full of energy, young woman, who loves to take care of every kind of plants!</h3>
+                    <h4>
+                        I am a full of energy, young woman, who loves to take care of every kind of plants!
+                        For many years I was interested in plants and I was eagerly looking for inspiration about them.
+                    </h4>
                     <a className="read-more" href="./about">Read more...</a>
                 </div>
                 <div className="empty"></div>

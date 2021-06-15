@@ -34,16 +34,16 @@ function Article (){
     return (
         
         <div style={{justifyContent: "center", alignItems: "center"}}>
-            <div className = "box">
+            <div className = "box2">
                 <h4 alignItems = "center">{titleInput}</h4>
                 <div>
-                   {descriptionInput1}
+                   {descriptionInput}
                 </div>
-                {/* <div>
-                    <img style={{marginTop: '20px'}} className="mr-3"src={require('./images/kwiaty.jpg').default} height={ 350} width={ 400} alt="Generic placeholder image"/> 
-                </div> */}
                 <div>
-                   {descriptionInput2}
+                    <img style={{marginTop: '20px'}} className="mr-3"src={require('./images/kwiaty.jpg').default} height={ 450} width={ 600} alt="Generic placeholder image"/> 
+                </div>
+                <div>
+                   {descriptionInput}
                 </div>
             </div>
         </div>
